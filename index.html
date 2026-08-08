@@ -133,9 +133,19 @@ section{padding:40px 0}
   letter-spacing:.06em;text-transform:uppercase;padding:4px 11px;border-radius:20px}
 .price .name{font-size:18px;font-weight:800;margin-bottom:8px}
 .price .desc{font-size:14px;color:var(--soft);min-height:60px}
-.price .amount{font-size:22px;font-weight:800;margin-top:14px;color:var(--blue-dark)}
-.price ul{margin:14px 0 0;padding-left:18px;font-size:13px;color:var(--soft)}
+.price .amount{font-size:24px;font-weight:800;margin:6px 0 12px;color:var(--blue-dark)}
+.price ul{margin:8px 0 0;padding-left:18px;font-size:13px;color:var(--soft)}
 .price ul li{margin:5px 0}
+.price .incl{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;color:var(--ink);margin-top:16px}
+.price .fine{font-size:12px;color:var(--soft);margin-top:16px;font-style:italic;border-top:1px dashed var(--line);padding-top:12px}
+.price.wide{margin-top:16px}
+.price.wide .desc{min-height:auto}
+.tagind{display:inline-block;font-size:12px;font-weight:800;color:var(--blue-dark);background:var(--blue-soft);padding:4px 11px;border-radius:20px;margin-left:8px;vertical-align:middle}
+.addon{background:var(--navy);color:#fff;border-radius:18px;padding:24px 26px;margin-top:16px;box-shadow:var(--shadow)}
+.addon-title{font-size:16px;font-weight:800;margin-bottom:12px}
+.addon ul{margin:0;padding-left:18px;font-size:14px;color:#cdd8e8;line-height:1.6}
+.addon ul li{margin:7px 0}
+.addon ul li b{color:#fff}
 .scarcity{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:22px}
 .sc{flex:1;min-width:200px;background:var(--navy);color:#fff;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:14px}
 .sc .em{font-size:26px}
@@ -317,36 +327,56 @@ footer{text-align:center;color:var(--soft);font-size:13px;padding:10px 0 50px}
 
 <!-- 06 Форматы и стоимость -->
 <section id="pricing">
-  <div class="head"><span class="n">06</span><h2>Форматы и стоимость</h2></div>
-  <p class="sub">Формат — только Reels (сторис не веду). Стоимость зависит от продукта и объёма ТЗ.</p>
+  <div class="head"><span class="n">06</span><h2>Рекламные интеграции</h2></div>
+  <p class="sub">Формат — только Reels (сторис не веду). Стоимость зависит от продукта и объёма задачи.</p>
   <div class="scarcity">
     <div class="sc"><span class="em">🗓</span><div><b>4 места в месяц</b><span>Ограниченное число интеграций — качество вместо потока рекламы</span></div></div>
     <div class="sc"><span class="em">📈</span><div><b>Активно растущий блог</b><span>Охваты и аудитория растут — рекламу видит всё больше людей</span></div></div>
   </div>
   <div class="price-grid">
     <div class="price">
-      <div class="name">Интеграция в ролик</div>
-      <div class="desc">Нативное упоминание вашего продукта внутри моего ролика на общую тему.</div>
-      <ul>
-        <li>Органично вписано в контент</li>
-        <li>Ссылка / промокод в описании</li>
-        <li>Отчёт по статистике после выхода</li>
-      </ul>
+      <div class="name">Нативное упоминание</div>
       <div class="amount">от 5 000 ₽</div>
+      <div class="desc">Ваш продукт или сервис органично появляется внутри моего обычного Reels. Подходит, если вам нужно коротко познакомить мою аудиторию с продуктом без отдельного рекламного ролика.</div>
+      <div class="incl">Включает</div>
+      <ul>
+        <li>нативное упоминание продукта;</li>
+        <li>демонстрацию продукта, если она уместна;</li>
+        <li>короткий призыв к действию;</li>
+        <li>отметку бренда;</li>
+        <li>публикацию в Instagram.</li>
+      </ul>
+      <div class="fine">Ролик создаётся в рамках моего обычного контента, а не отдельно под рекламную кампанию.</div>
     </div>
     <div class="price best">
-      <div class="ribbon">Макс. охват</div>
-      <div class="name">Обзор на сервис</div>
-      <div class="desc">Полноценный ролик, целиком посвящённый вашему сервису — сценарий под задачу.</div>
+      <div class="ribbon">Глубже</div>
+      <div class="name">Нативная интеграция</div>
+      <div class="amount">от 10 000 ₽</div>
+      <div class="desc">Более глубокая интеграция продукта в контент. Я самостоятельно изучаю продукт и придумываю, как показать его моей аудитории через реальный сценарий использования, небольшой туториал, эксперимент или кейс.</div>
+      <div class="incl">Включает</div>
       <ul>
-        <li>Сценарий и продакшн под ваш оффер</li>
-        <li>Ссылка / промокод + переходы в описании</li>
-        <li>Закрепление + отчёт по статистике</li>
+        <li>тестирование продукта;</li>
+        <li>разработку идеи интеграции;</li>
+        <li>демонстрацию продукта;</li>
+        <li>сценарный блок внутри ролика;</li>
+        <li>моё мнение и опыт использования;</li>
+        <li>призыв к действию;</li>
+        <li>отметку бренда;</li>
+        <li>публикацию в Instagram.</li>
       </ul>
-      <div class="amount">от 8 000 ₽</div>
     </div>
   </div>
-  <p class="note">Цена зависит от ТЗ, продукта и сроков. Указана стартовая стоимость — напишите, и рассчитаю бюджет под вашу задачу.</p>
+  <div class="price wide">
+    <div class="name">Пакетные интеграции / амбассадорство <span class="tagind">индивидуально</span></div>
+    <div class="desc">Если вам интересно не разовое размещение, а серия публикаций или долгосрочное сотрудничество, можем собрать отдельный пакет. Количество интеграций, формат, период сотрудничества и стоимость обсуждаются индивидуально в зависимости от продукта и задачи.</div>
+  </div>
+  <div class="addon">
+    <div class="addon-title">Дополнительно</div>
+    <ul>
+      <li>Использование опубликованного ролика брендом в своих социальных сетях — <b>+5 000 ₽</b>.</li>
+      <li>Остальные условия сотрудничества обсуждаются индивидуально.</li>
+    </ul>
+  </div>
 </section>
 
 <!-- CTA -->
