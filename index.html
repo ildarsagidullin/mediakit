@@ -7,172 +7,242 @@
 <meta name="description" content="Медиакит блогера @sagidullinir — ниша ИИ и нейросети. 548 тыс. просмотров в месяц, вовлечённая аудитория РФ и Казахстана.">
 <style>
 :root{
-  --paper:#faf8f2;
-  --ink:#2b2a26;
-  --ink-soft:#6b6860;
-  --line:#e4e0d5;
-  --grid:#ece7db;
-  --accent:#e8552d;
-  --accent-soft:#fce9e2;
+  --blue:#1478ff;
+  --blue-dark:#0a58cc;
+  --navy:#0b1524;
+  --navy-2:#111f36;
+  --ink:#0e1726;
+  --soft:#5c6b80;
+  --bg:#eef3f9;
   --card:#ffffff;
-  --shadow:0 1px 0 #ece7da, 0 8px 24px -18px rgba(43,42,38,.35);
+  --line:#dfe7f1;
+  --blue-soft:#e6f0ff;
+  --shadow:0 1px 0 #e3ebf5, 0 14px 34px -22px rgba(11,21,36,.45);
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{
   font-family:-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
-  color:var(--ink);
-  background:var(--paper);
-  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
-  background-size:26px 26px;
-  line-height:1.55;
-  -webkit-font-smoothing:antialiased;
+  color:var(--ink);background:var(--bg);line-height:1.55;-webkit-font-smoothing:antialiased;
 }
-.wrap{max-width:920px;margin:0 auto;padding:0 20px}
-.mono{font-family:"SF Mono",ui-monospace,"Cascadia Code",Consolas,monospace}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}
+a{color:inherit}
+img{max-width:100%}
 
-/* header */
-header{padding:56px 0 20px}
-.eyebrow{
-  display:inline-block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;
-  color:var(--accent);font-weight:700;border:1.5px solid var(--accent);
-  padding:5px 12px;border-radius:20px;margin-bottom:22px;
-}
-h1{font-size:clamp(30px,6vw,52px);line-height:1.05;letter-spacing:-.02em;font-weight:800}
-.nick{color:var(--accent)}
-.lead{font-size:clamp(16px,2.4vw,20px);color:var(--ink-soft);margin-top:16px;max-width:640px}
-.nichebadges{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
-.tag{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:6px 12px;font-size:13px;color:var(--ink-soft);box-shadow:var(--shadow)}
-.tag b{color:var(--ink)}
+/* HERO */
+.hero{background:var(--navy);color:#fff;border-radius:0 0 28px 28px;overflow:hidden;position:relative}
+.hero::before{content:"";position:absolute;inset:0;background:
+  radial-gradient(700px 340px at 85% -10%,rgba(20,120,255,.55),transparent 60%),
+  radial-gradient(500px 300px at 0% 120%,rgba(20,120,255,.28),transparent 60%);}
+.hero .wrap{position:relative;padding:52px 20px 44px}
+.badge-line{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.pill{font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;
+  background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);color:#dce8ff;
+  padding:6px 12px;border-radius:30px}
+.pill.solid{background:var(--blue);border-color:var(--blue);color:#fff}
+h1{font-size:clamp(34px,7vw,64px);line-height:1;letter-spacing:-.02em;font-weight:800}
+.nick{color:#5ea2ff}
+.hero p.lead{margin-top:18px;font-size:clamp(16px,2.4vw,21px);color:#b9c6da;max-width:640px}
+.hero .facts{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.fact{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:12px;padding:12px 16px}
+.fact b{display:block;font-size:22px;font-weight:800;color:#fff;line-height:1}
+.fact span{font-size:12px;color:#9fb1c9}
 
-/* section */
-section{padding:34px 0}
-.sec-title{display:flex;align-items:baseline;gap:12px;margin-bottom:22px}
-.sec-title .num{font-size:13px;color:var(--accent);font-weight:700}
-.sec-title h2{font-size:clamp(20px,3.5vw,28px);letter-spacing:-.01em}
-.underline{position:relative}
-.underline::after{content:"";position:absolute;left:0;bottom:-4px;width:100%;height:6px;background:var(--accent-soft);border-radius:4px;z-index:-1}
+/* SECTION */
+section{padding:40px 0}
+.head{display:flex;align-items:center;gap:12px;margin-bottom:8px}
+.head .n{font-size:13px;font-weight:800;color:#fff;background:var(--blue);width:30px;height:30px;
+  display:flex;align-items:center;justify-content:center;border-radius:9px}
+.head h2{font-size:clamp(21px,3.6vw,30px);letter-spacing:-.01em}
+.sub{color:var(--soft);margin:0 0 22px 42px;font-size:15px}
+@media(max-width:560px){.sub{margin-left:0}}
 
 /* stat grid */
 .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px}
-.stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;box-shadow:var(--shadow)}
-.stat .big{font-size:clamp(26px,5vw,36px);font-weight:800;letter-spacing:-.02em;line-height:1}
-.stat .lbl{font-size:13px;color:var(--ink-soft);margin-top:8px}
-.stat.hl{background:var(--accent);color:#fff;border-color:var(--accent)}
-.stat.hl .lbl{color:rgba(255,255,255,.85)}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px;box-shadow:var(--shadow)}
+.stat .big{font-size:clamp(26px,5vw,36px);font-weight:800;letter-spacing:-.02em;line-height:1;color:var(--ink)}
+.stat .lbl{font-size:13px;color:var(--soft);margin-top:8px}
+.stat.hl{background:var(--blue);border-color:var(--blue)}
+.stat.hl .big{color:#fff}.stat.hl .lbl{color:rgba(255,255,255,.85)}
+.note{font-size:13px;color:var(--soft);margin-top:16px;background:var(--blue-soft);border-left:3px solid var(--blue);
+  padding:12px 14px;border-radius:0 10px 10px 0}
+
+/* official pinned */
+.official{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:18px;box-shadow:var(--shadow)}
+.official .cap{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:700;margin-bottom:14px;color:var(--ink)}
+.official .cap .dot{color:var(--blue)}
+.pdfgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:640px){.pdfgrid{grid-template-columns:1fr}}
+.pdfgrid img{width:100%;border:1px solid var(--line);border-radius:12px;display:block}
+.dl{display:inline-flex;align-items:center;gap:8px;margin-top:16px;background:var(--navy);color:#fff;
+  text-decoration:none;font-weight:700;font-size:14px;padding:11px 18px;border-radius:11px}
+.dl:hover{background:var(--navy-2)}
+
+/* case cards */
+.cases{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
+.case{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px;box-shadow:var(--shadow)}
+.case .title{font-size:15px;font-weight:800;margin-bottom:4px}
+.case .thumb{margin-bottom:6px}
+.case .thumb img{border-radius:10px;border:1px solid var(--line)}
+.metrics{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}
+.metric{background:var(--blue-soft);border-radius:10px;padding:10px}
+.metric b{display:block;font-size:19px;font-weight:800;color:var(--blue-dark);line-height:1}
+.metric span{font-size:11px;color:var(--soft)}
 
 /* two col */
 .cols{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 @media(max-width:640px){.cols{grid-template-columns:1fr}}
-.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px;box-shadow:var(--shadow)}
-.card h3{font-size:15px;margin-bottom:16px;color:var(--ink)}
-
-/* bars */
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;box-shadow:var(--shadow)}
+.card h3{font-size:15px;margin-bottom:16px}
 .bar{margin:11px 0}
 .bar .row{display:flex;justify-content:space-between;font-size:14px;margin-bottom:5px}
 .bar .row span:last-child{font-weight:700}
-.track{height:8px;background:var(--grid);border-radius:6px;overflow:hidden}
-.fill{height:100%;background:var(--accent);border-radius:6px}
-.geo li,.city li{list-style:none;display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px dashed var(--line);font-size:14px}
-.geo li:last-child,.city li:last-child{border-bottom:none}
-.geo li b,.city li b{font-weight:700}
+.track{height:8px;background:#e7edf6;border-radius:6px;overflow:hidden}
+.fill{height:100%;background:var(--blue);border-radius:6px}
+.geo li{list-style:none;display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px dashed var(--line);font-size:14px}
+.geo li:last-child{border-bottom:none}.geo li b{font-weight:700}
+
+/* proofs */
+.proofs{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px}
+.proof{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:12px;box-shadow:var(--shadow)}
+.proof img{width:100%;border-radius:10px;border:1px solid var(--line);display:block}
+.proof .cap{font-size:13px;color:var(--soft);margin-top:12px}
+.proof .cap b{color:var(--ink)}
+.proof .tagx{display:inline-block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;
+  background:var(--blue);color:#fff;padding:4px 9px;border-radius:20px;margin-bottom:8px}
+.proof .tagx.green{background:#0f9d58}
 
 /* pricing */
-.price-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
-.price{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px;box-shadow:var(--shadow);position:relative;display:flex;flex-direction:column}
-.price.best{border:2px solid var(--accent)}
-.price .ribbon{position:absolute;top:-11px;left:24px;background:var(--accent);color:#fff;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:4px 10px;border-radius:20px}
-.price .name{font-size:16px;font-weight:800;margin-bottom:6px}
-.price .desc{font-size:13px;color:var(--ink-soft);min-height:38px}
-.price .amount{font-size:26px;font-weight:800;margin:16px 0 2px;letter-spacing:-.01em}
-.price .amount small{font-size:14px;color:var(--ink-soft);font-weight:600}
-
-/* proof */
-.proofs{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-@media(max-width:640px){.proofs{grid-template-columns:1fr}}
-.proof{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;box-shadow:var(--shadow)}
-.proof img{width:100%;border-radius:8px;display:block;border:1px solid var(--line)}
-.proof .cap{font-size:13px;color:var(--ink-soft);margin-top:12px}
-.proof .cap b{color:var(--ink)}
-
-/* case row */
-.caserow{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
-.chip{background:var(--accent-soft);color:var(--accent);border-radius:10px;padding:10px 14px;font-size:14px;font-weight:700}
+.price-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:640px){.price-grid{grid-template-columns:1fr}}
+.price{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:26px;box-shadow:var(--shadow);position:relative}
+.price.best{border:2px solid var(--blue)}
+.price .ribbon{position:absolute;top:-11px;left:24px;background:var(--blue);color:#fff;font-size:11px;font-weight:800;
+  letter-spacing:.06em;text-transform:uppercase;padding:4px 11px;border-radius:20px}
+.price .name{font-size:18px;font-weight:800;margin-bottom:8px}
+.price .desc{font-size:14px;color:var(--soft);min-height:60px}
+.price .amount{font-size:22px;font-weight:800;margin-top:14px;color:var(--blue-dark)}
+.price ul{margin:14px 0 0;padding-left:18px;font-size:13px;color:var(--soft)}
+.price ul li{margin:5px 0}
+.scarcity{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:22px}
+.sc{flex:1;min-width:200px;background:var(--navy);color:#fff;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:14px}
+.sc .em{font-size:26px}
+.sc b{font-size:16px}.sc span{font-size:13px;color:#9fb1c9;display:block}
 
 /* cta */
-.cta{background:var(--ink);color:var(--paper);border-radius:20px;padding:40px;text-align:center;margin:20px 0 60px}
-.cta h2{font-size:clamp(22px,4vw,32px);color:#fff;margin-bottom:12px}
-.cta p{color:rgba(255,255,255,.7);margin-bottom:24px}
-.btn{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:700;padding:14px 28px;border-radius:12px;font-size:16px;transition:transform .1s}
+.cta{background:var(--blue);color:#fff;border-radius:24px;padding:44px 30px;text-align:center;margin:16px 0 60px;position:relative;overflow:hidden}
+.cta::after{content:"";position:absolute;inset:0;background:radial-gradient(500px 260px at 90% 0,rgba(255,255,255,.18),transparent 60%)}
+.cta h2{position:relative;font-size:clamp(24px,4.5vw,36px);color:#fff;margin-bottom:12px}
+.cta p{position:relative;color:rgba(255,255,255,.9);margin-bottom:26px}
+.btn{position:relative;display:inline-block;background:#fff;color:var(--blue-dark);text-decoration:none;font-weight:800;
+  padding:15px 30px;border-radius:13px;font-size:16px;transition:transform .1s}
 .btn:hover{transform:translateY(-2px)}
-.btn.ghost{background:transparent;border:1.5px solid rgba(255,255,255,.3);margin-left:8px}
+.btn.ghost{background:transparent;border:1.6px solid rgba(255,255,255,.5);color:#fff;margin-left:8px}
 @media(max-width:480px){.btn.ghost{margin-left:0;margin-top:10px}}
-
-footer{text-align:center;color:var(--ink-soft);font-size:13px;padding:20px 0 50px}
-.note{font-size:12px;color:var(--ink-soft);margin-top:14px}
+footer{text-align:center;color:var(--soft);font-size:13px;padding:10px 0 50px}
 </style>
 </head>
 <body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="wrap">
+    <div class="badge-line">
+      <span class="pill solid">Медиакит для рекламодателей</span>
+      <span class="pill">ИИ · нейросети · продуктивность</span>
+    </div>
+    <h1>Ильдар Сагидуллин<br><span class="nick">@sagidullinir</span></h1>
+    <p class="lead">Автор про искусственный интеллект и нейросети — простыми словами о ChatGPT, Claude, промптах и AI-инструментах. Контент, который сохраняют и пересылают.</p>
+    <div class="facts">
+      <div class="fact"><b>548K</b><span>просмотров / мес</span></div>
+      <div class="fact"><b>415K</b><span>зрителей / мес</span></div>
+      <div class="fact"><b>~36K</b><span>средний охват</span></div>
+      <div class="fact"><b>РФ·КЗ</b><span>ядро аудитории</span></div>
+    </div>
+  </div>
+</div>
+
 <div class="wrap">
 
-<header>
-  <span class="eyebrow">Медиакит · для рекламодателей</span>
-  <h1>Ильдар Сагидуллин<br><span class="nick">@sagidullinir</span></h1>
-  <p class="lead">Автор про <b>искусственный интеллект и нейросети</b> — простыми словами о ChatGPT, Claude, промптах и AI-инструментах. Полезный контент, который люди сохраняют и пересылают.</p>
-  <div class="nichebadges">
-    <span class="tag"><b>Ниша:</b> ИИ · нейросети · продуктивность</span>
-    <span class="tag"><b>Формат:</b> Reels</span>
-    <span class="tag"><b>Гео:</b> РФ · Казахстан · СНГ</span>
+<!-- 01 Официальная статистика (закреплено из PDF) -->
+<section id="official">
+  <div class="head"><span class="n">01</span><h2>Официальная статистика Instagram</h2></div>
+  <p class="sub">Выгрузка напрямую из Instagram за период <b>8 июля – 7 августа 2026</b>. Скачивается как PDF — можно проверить.</p>
+  <div class="official">
+    <div class="cap"><span class="dot">●</span> Скриншот выгрузки · @sagidullinir · 30 дней</div>
+    <div class="pdfgrid">
+      <img src="img/pdf_stat_1.png" alt="Статистика охватов Instagram за 30 дней">
+      <img src="img/pdf_stat_2.png" alt="Статистика аудитории Instagram за 30 дней">
+    </div>
+    <a class="dl" href="statistika-instagram.pdf" target="_blank" rel="noopener">⬇ Скачать полную статистику (PDF)</a>
   </div>
-</header>
+</section>
 
-<!-- 1. Цифры -->
+<!-- 02 Ключевые цифры -->
 <section id="stats">
-  <div class="sec-title"><span class="num">01</span><h2 class="underline">Цифры за 30 дней</h2></div>
+  <div class="head"><span class="n">02</span><h2>Ключевые цифры</h2></div>
+  <p class="sub">За 30 дней (8 июл – 7 авг 2026). Аккаунт продаётся охватом и вовлечённостью, а не размером базы.</p>
   <div class="stats">
     <div class="stat hl"><div class="big">548 тыс.</div><div class="lbl">Просмотров Reels</div></div>
     <div class="stat"><div class="big">415 тыс.</div><div class="lbl">Уникальных зрителей</div></div>
-    <div class="stat"><div class="big">~36 тыс.</div><div class="lbl">Средний охват ролика</div></div>
-    <div class="stat"><div class="big">7 112</div><div class="lbl">Подписчиков</div></div>
+    <div class="stat"><div class="big">~36 тыс.</div><div class="lbl">Средний охват ролика*</div></div>
+    <div class="stat"><div class="big">278 тыс.</div><div class="lbl">Топовый ролик*</div></div>
     <div class="stat"><div class="big">19 тыс.</div><div class="lbl">Сохранений</div></div>
     <div class="stat"><div class="big">9,9 тыс.</div><div class="lbl">Поделились</div></div>
     <div class="stat"><div class="big">9,3 тыс.</div><div class="lbl">Лайков</div></div>
     <div class="stat"><div class="big">3,9 тыс.</div><div class="lbl">Комментариев</div></div>
+    <div class="stat"><div class="big">7 112</div><div class="lbl">Подписчиков</div></div>
+    <div class="stat"><div class="big">15</div><div class="lbl">Reels за месяц</div></div>
   </div>
-  <p class="note">💡 Аккаунт работает на <b>охват и вовлечённость</b>, а не на размер базы: 7к подписчиков дают полмиллиона просмотров в месяц. Высокая доля сохранений и репостов — признак по-настоящему полезного контента, которому доверяют.</p>
+  <p class="note">* Расчётные показатели, которых нет в выгрузке напрямую: средний охват = 548K ÷ 15 роликов; топовый ролик набрал 278,6K просмотров. Высокая доля сохранений и репостов — маркер по-настоящему полезного контента.</p>
 </section>
 
-<!-- 2. Топ роликов -->
-<section id="top">
-  <div class="sec-title"><span class="num">02</span><h2 class="underline">Топ роликов месяца</h2></div>
-  <div class="cols">
-    <div class="card">
-      <h3>Просмотры лучших Reels</h3>
-      <div class="bar"><div class="row"><span>«В следующем видео выложу…»</span><span>278,6к</span></div><div class="track"><div class="fill" style="width:100%"></div></div></div>
-      <div class="bar"><div class="row"><span>«Пиши 3 видео в комментах»</span><span>80,7к</span></div><div class="track"><div class="fill" style="width:29%"></div></div></div>
-      <div class="bar"><div class="row"><span>«Мой бесплатный тренажёр»</span><span>31,7к</span></div><div class="track"><div class="fill" style="width:12%"></div></div></div>
-      <div class="bar"><div class="row"><span>Интервью «Платформа…»</span><span>18,5к</span></div><div class="track"><div class="fill" style="width:7%"></div></div></div>
-      <div class="bar"><div class="row"><span>«Готовый финальный промпт»</span><span>10,3к</span></div><div class="track"><div class="fill" style="width:4%"></div></div></div>
-    </div>
-    <div class="card">
-      <h3>Что это значит для бренда</h3>
-      <div class="caserow">
-        <span class="chip">Вирусный потолок до 280к</span>
-        <span class="chip">Тёплая ниша ИИ</span>
-        <span class="chip">Сильный call-to-action</span>
-        <span class="chip">Аудитория пишет в комменты</span>
+<!-- 03 Отдельные ролики -->
+<section id="cases">
+  <div class="head"><span class="n">03</span><h2>Как заходят отдельные ролики</h2></div>
+  <p class="sub">Реальные показатели последних роликов — стабильный охват на новую аудиторию.</p>
+  <div class="cases">
+    <div class="case">
+      <div class="title">«Замени сериалы на это»</div>
+      <div class="thumb"><img src="img/video_serialy_summary.png" alt="Статистика ролика: 80 728 просмотров"></div>
+      <div class="metrics">
+        <div class="metric"><b>80,7K</b><span>просмотров</span></div>
+        <div class="metric"><b>69K</b><span>зрителей</span></div>
+        <div class="metric"><b>+310</b><span>подписок с ролика</span></div>
+        <div class="metric"><b>4 397</b><span>сохранений</span></div>
       </div>
-      <p class="note" style="margin-top:18px">Ролики построены на пользе и вовлечении: люди активно комментируют, сохраняют и пересылают. Это идеальная среда для интеграции AI-сервисов, обучения, приложений и продуктивности.</p>
+    </div>
+    <div class="case">
+      <div class="title">«Тебя заставляют думать…»</div>
+      <div class="thumb"><img src="img/video_slozhno_audience.png" alt="Аудитория ролика: 94,2% неподписчики"></div>
+      <div class="metrics">
+        <div class="metric"><b>31,7K</b><span>просмотров</span></div>
+        <div class="metric"><b>94,2%</b><span>новая аудитория</span></div>
+        <div class="metric"><b>20 сек</b><span>среднее время</span></div>
+        <div class="metric"><b>+417</b><span>подписок с ролика</span></div>
+      </div>
+    </div>
+    <div class="case">
+      <div class="title">«Ты должен это в 2026»</div>
+      <div class="thumb"><img src="img/video_2026_engagement.png" alt="Вовлечённость ролика: 5215 сохранений"></div>
+      <div class="metrics">
+        <div class="metric"><b>+332</b><span>подписки</span></div>
+        <div class="metric"><b>317</b><span>переходов в профиль</span></div>
+        <div class="metric"><b>5 215</b><span>сохранений</span></div>
+        <div class="metric"><b>24</b><span>клика по ссылке</span></div>
+      </div>
     </div>
   </div>
+  <p class="note">До <b>94% просмотров</b> приходят от неподписчиков — реклама у автора видит не «замкнутую» базу, а постоянно новую аудиторию.</p>
 </section>
 
-<!-- 3. Аудитория -->
+<!-- 04 Аудитория -->
 <section id="audience">
-  <div class="sec-title"><span class="num">03</span><h2 class="underline">Аудитория</h2></div>
+  <div class="head"><span class="n">04</span><h2>Аудитория</h2></div>
+  <p class="sub">Платёжеспособное взрослое ядро, основное гео — Россия и Казахстан.</p>
   <div class="cols">
     <div class="card">
-      <h3>Возраст · платёжеспособное ядро</h3>
+      <h3>Возраст</h3>
       <div class="bar"><div class="row"><span>35–44</span><span>36,4%</span></div><div class="track"><div class="fill" style="width:100%"></div></div></div>
       <div class="bar"><div class="row"><span>45–54</span><span>27,3%</span></div><div class="track"><div class="fill" style="width:75%"></div></div></div>
       <div class="bar"><div class="row"><span>25–34</span><span>20,2%</span></div><div class="track"><div class="fill" style="width:55%"></div></div></div>
@@ -194,60 +264,78 @@ footer{text-align:center;color:var(--ink-soft);font-size:13px;padding:20px 0 50p
   </div>
 </section>
 
-<!-- 4. Пруфы -->
+<!-- 05 Пруфы и вовлечённость -->
 <section id="proof">
-  <div class="sec-title"><span class="num">04</span><h2 class="underline">Пруфы статистики</h2></div>
+  <div class="head"><span class="n">05</span><h2>Пруфы и вовлечённость</h2></div>
+  <p class="sub">Скриншоты напрямую из Instagram — статистика, удержание и живая реакция аудитории.</p>
   <div class="proofs">
     <div class="proof">
-      <img src="img/views.png" alt="Статистика просмотров видео за 30 дней">
-      <p class="cap"><b>Контент за 30 дней.</b> Реальные просмотры роликов из Instagram-статистики.</p>
+      <span class="tagx">Статистика</span>
+      <img src="img/views.png" alt="Просмотры видео за 30 дней">
+      <p class="cap"><b>Контент за 30 дней.</b> Реальные просмотры роликов.</p>
     </div>
     <div class="proof">
-      <img src="img/engagement.png" alt="Вовлечённость одного ролика: переходы в профиль и подписки">
-      <p class="cap"><b>Результат одного ролика:</b> 114 переходов в профиль, +8 подписок, клики по ссылке в шапке.</p>
+      <span class="tagx green">Результат рекламной интеграции</span>
+      <img src="img/engagement.png" alt="Результат рекламной интеграции">
+      <p class="cap"><b>Итог одного рекламного ролика:</b> 114 переходов в профиль, подписки, клики по ссылке.</p>
+    </div>
+    <div class="proof">
+      <span class="tagx">Живые комментарии</span>
+      <img src="img/comments.png" alt="Комментарии аудитории под роликом">
+      <p class="cap"><b>Аудитория реально общается</b> в комментариях — не боты, живые люди.</p>
+    </div>
+    <div class="proof">
+      <span class="tagx">Удержание</span>
+      <img src="img/reels_retention2.png" alt="График удержания зрителей">
+      <p class="cap"><b>Досматриваемость:</b> люди остаются в ролике — источник ~90% из ленты и вкладки Reels.</p>
     </div>
   </div>
 </section>
 
-<!-- 5. Форматы и цены -->
+<!-- 06 Форматы и стоимость -->
 <section id="pricing">
-  <div class="sec-title"><span class="num">05</span><h2 class="underline">Форматы и стоимость</h2></div>
+  <div class="head"><span class="n">06</span><h2>Форматы и стоимость</h2></div>
+  <p class="sub">Формат — только Reels (сторис не веду). Стоимость зависит от продукта и объёма ТЗ.</p>
+  <div class="scarcity">
+    <div class="sc"><span class="em">🗓</span><div><b>4 места в месяц</b><span>Ограниченное число интеграций — качество вместо потока рекламы</span></div></div>
+    <div class="sc"><span class="em">📈</span><div><b>Активно растущий блог</b><span>Охваты и аудитория растут — рекламу видит всё больше людей</span></div></div>
+  </div>
   <div class="price-grid">
     <div class="price">
-      <div class="name">Reels-интеграция</div>
-      <div class="desc">Нативная вставка вашего продукта в ролик, 15–30 сек.</div>
-      <div class="amount">от 25 000 <small>₽</small></div>
+      <div class="name">Интеграция в ролик</div>
+      <div class="desc">Нативное упоминание вашего продукта внутри моего ролика на общую тему.</div>
+      <ul>
+        <li>Органично вписано в контент</li>
+        <li>Ссылка / промокод в описании</li>
+        <li>Отчёт по статистике после выхода</li>
+      </ul>
+      <div class="amount">Цена по запросу</div>
     </div>
     <div class="price best">
-      <div class="ribbon">Хит</div>
-      <div class="name">Reels + сторис</div>
-      <div class="desc">Ролик + серия сторис с оффером и ссылкой. Максимальный охват.</div>
-      <div class="amount">от 35 000 <small>₽</small></div>
-    </div>
-    <div class="price">
-      <div class="name">Серия сторис</div>
-      <div class="desc">3–4 кадра с прогревом, оффером и переходом по ссылке.</div>
-      <div class="amount">от 8 000 <small>₽</small></div>
-    </div>
-    <div class="price">
-      <div class="name">Амбассадорство</div>
-      <div class="desc">Долгосрочное сотрудничество, пакет размещений на месяц.</div>
-      <div class="amount">по запросу</div>
+      <div class="ribbon">Макс. охват</div>
+      <div class="name">Отдельный ролик под продукт</div>
+      <div class="desc">Полноценный ролик, полностью посвящённый вашему сервису — сценарий под задачу.</div>
+      <ul>
+        <li>Сценарий и продакшн под ваш оффер</li>
+        <li>Максимальное внимание к продукту</li>
+        <li>Закрепление + отчёт по статистике</li>
+      </ul>
+      <div class="amount">Цена по запросу</div>
     </div>
   </div>
-  <p class="note">Финальная стоимость зависит от продукта, объёма ТЗ и сроков. Обсуждаем индивидуально — напишите, подберём формат под задачу и бюджет.</p>
+  <p class="note">Итоговая стоимость зависит от продукта, сложности ТЗ и сроков. Напишите — предложу формат и рассчитаю бюджет под вашу задачу.</p>
 </section>
 
 <!-- CTA -->
 <div class="cta">
   <h2>Обсудим рекламу?</h2>
-  <p>Отвечаю быстро. Расскажите про продукт — предложу формат и КП.</p>
+  <p>Расскажите про продукт — предложу формат и коммерческое предложение.</p>
   <a class="btn" href="https://t.me/ildarssagidullin" target="_blank" rel="noopener">Написать в Telegram</a>
   <a class="btn ghost" href="https://www.instagram.com/sagidullinir/" target="_blank" rel="noopener">Instagram</a>
 </div>
 
 <footer>
-  © 2026 · Ильдар Сагидуллин · @sagidullinir · Медиакит · данные Instagram за 8 июл – 7 авг 2026
+  © 2026 · Ильдар Сагидуллин · @sagidullinir · данные Instagram за 8 июл – 7 авг 2026
 </footer>
 
 </div>
