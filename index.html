@@ -35,6 +35,11 @@ img{max-width:100%}
   radial-gradient(700px 340px at 85% -10%,rgba(20,120,255,.55),transparent 60%),
   radial-gradient(500px 300px at 0% 120%,rgba(20,120,255,.28),transparent 60%);}
 .hero .wrap{position:relative;padding:52px 20px 44px}
+.hero-inner{display:flex;align-items:center;gap:36px}
+.hero-text{flex:1;min-width:0}
+.hero-visual{flex-shrink:0;width:250px}
+.hero-visual img{width:100%;border-radius:20px;border:3px solid rgba(255,255,255,.15);box-shadow:0 20px 50px -20px rgba(0,0,0,.7);display:block}
+@media(max-width:760px){.hero-inner{flex-direction:column-reverse;align-items:flex-start;gap:24px}.hero-visual{width:200px;align-self:center}}
 .badge-line{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
 .pill{font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;
   background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);color:#dce8ff;
@@ -146,18 +151,23 @@ footer{text-align:center;color:var(--soft);font-size:13px;padding:10px 0 50px}
 
 <!-- HERO -->
 <div class="hero">
-  <div class="wrap">
-    <div class="badge-line">
-      <span class="pill solid">Медиакит для рекламодателей</span>
-      <span class="pill">ИИ · нейросети · продуктивность</span>
+  <div class="wrap hero-inner">
+    <div class="hero-text">
+      <div class="badge-line">
+        <span class="pill solid">Медиакит для рекламодателей</span>
+        <span class="pill">ИИ · нейросети · продуктивность</span>
+      </div>
+      <h1>Ильдар Сагидуллин<br><span class="nick">@sagidullinir</span></h1>
+      <p class="lead">Автор про искусственный интеллект и нейросети — простыми словами о ChatGPT, Claude, промптах и AI-инструментах. Контент, который сохраняют и пересылают.</p>
+      <div class="facts">
+        <div class="fact"><b>548K</b><span>просмотров / мес</span></div>
+        <div class="fact"><b>415K</b><span>зрителей / мес</span></div>
+        <div class="fact"><b>~36K</b><span>средний охват</span></div>
+        <div class="fact"><b>РФ·КЗ</b><span>ядро аудитории</span></div>
+      </div>
     </div>
-    <h1>Ильдар Сагидуллин<br><span class="nick">@sagidullinir</span></h1>
-    <p class="lead">Автор про искусственный интеллект и нейросети — простыми словами о ChatGPT, Claude, промптах и AI-инструментах. Контент, который сохраняют и пересылают.</p>
-    <div class="facts">
-      <div class="fact"><b>548K</b><span>просмотров / мес</span></div>
-      <div class="fact"><b>415K</b><span>зрителей / мес</span></div>
-      <div class="fact"><b>~36K</b><span>средний охват</span></div>
-      <div class="fact"><b>РФ·КЗ</b><span>ядро аудитории</span></div>
+    <div class="hero-visual">
+      <img src="img/hero_cover.png" alt="Обложка ролика @sagidullinir">
     </div>
   </div>
 </div>
@@ -309,29 +319,28 @@ footer{text-align:center;color:var(--soft);font-size:13px;padding:10px 0 50px}
         <li>Ссылка / промокод в описании</li>
         <li>Отчёт по статистике после выхода</li>
       </ul>
-      <div class="amount">Цена по запросу</div>
+      <div class="amount">от 5 000 ₽</div>
     </div>
     <div class="price best">
       <div class="ribbon">Макс. охват</div>
-      <div class="name">Отдельный ролик под продукт</div>
-      <div class="desc">Полноценный ролик, полностью посвящённый вашему сервису — сценарий под задачу.</div>
+      <div class="name">Обзор на сервис</div>
+      <div class="desc">Полноценный ролик, целиком посвящённый вашему сервису — сценарий под задачу.</div>
       <ul>
         <li>Сценарий и продакшн под ваш оффер</li>
-        <li>Максимальное внимание к продукту</li>
+        <li>Ссылка / промокод + переходы в описании</li>
         <li>Закрепление + отчёт по статистике</li>
       </ul>
-      <div class="amount">Цена по запросу</div>
+      <div class="amount">от 8 000 ₽</div>
     </div>
   </div>
-  <p class="note">Итоговая стоимость зависит от продукта, сложности ТЗ и сроков. Напишите — предложу формат и рассчитаю бюджет под вашу задачу.</p>
+  <p class="note">Цена зависит от ТЗ, продукта и сроков. Указана стартовая стоимость — напишите, и рассчитаю бюджет под вашу задачу.</p>
 </section>
 
 <!-- CTA -->
 <div class="cta">
   <h2>Обсудим рекламу?</h2>
-  <p>Расскажите про продукт — предложу формат и коммерческое предложение.</p>
-  <a class="btn" href="https://t.me/ildarssagidullin" target="_blank" rel="noopener">Написать в Telegram</a>
-  <a class="btn ghost" href="https://www.instagram.com/sagidullinir/" target="_blank" rel="noopener">Instagram</a>
+  <p>Расскажите про продукт — предложу формат и коммерческое предложение. Отвечаю в Telegram.</p>
+  <a class="btn" href="https://t.me/ildarssagidullin" target="_blank" rel="noopener">Написать в Telegram →</a>
 </div>
 
 <footer>
