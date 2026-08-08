@@ -35,6 +35,10 @@ img{max-width:100%}
   radial-gradient(700px 340px at 85% -10%,rgba(20,120,255,.55),transparent 60%),
   radial-gradient(500px 300px at 0% 120%,rgba(20,120,255,.28),transparent 60%);}
 .hero .wrap{position:relative;padding:52px 20px 44px}
+.hero .wrap:first-child{padding-bottom:0}
+.profile-card{display:block;background:#0d0d0d;border:1px solid rgba(255,255,255,.16);border-radius:16px;overflow:hidden;text-decoration:none;box-shadow:0 14px 34px -22px rgba(0,0,0,.8);transition:border-color .15s}
+.profile-card:hover{border-color:var(--blue)}
+.profile-card img{width:100%;display:block}
 .hero-inner{display:flex;align-items:center;gap:36px}
 .hero-text{flex:1;min-width:0}
 .hero-visual{flex-shrink:0;width:250px}
@@ -151,6 +155,11 @@ footer{text-align:center;color:var(--soft);font-size:13px;padding:10px 0 50px}
 
 <!-- HERO -->
 <div class="hero">
+  <div class="wrap">
+    <a class="profile-card" href="https://www.instagram.com/sagidullinir/" target="_blank" rel="noopener">
+      <img src="img/profile.png" alt="Профиль Instagram @sagidullinir">
+    </a>
+  </div>
   <div class="wrap hero-inner">
     <div class="hero-text">
       <div class="badge-line">
@@ -338,8 +347,8 @@ footer{text-align:center;color:var(--soft);font-size:13px;padding:10px 0 50px}
 
 <!-- CTA -->
 <div class="cta">
-  <h2>Обсудим рекламу?</h2>
-  <p>Расскажите про продукт — предложу формат и коммерческое предложение. Отвечаю в Telegram.</p>
+  <h2>Давайте обсудим ваш продукт</h2>
+  <p>Расскажите про сервис — предложу формат и коммерческое предложение. Отвечаю в Telegram.</p>
   <a class="btn" href="https://t.me/ildarssagidullin" target="_blank" rel="noopener">Написать в Telegram →</a>
 </div>
 
