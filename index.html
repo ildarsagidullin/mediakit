@@ -151,6 +151,11 @@ section{padding:40px 0}
 .btn:hover{transform:translateY(-2px)}
 .btn.ghost{background:transparent;border:1.6px solid rgba(255,255,255,.5);color:#fff;margin-left:8px}
 @media(max-width:480px){.btn.ghost{margin-left:0;margin-top:10px}}
+.contacts{position:relative;display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:26px}
+.contacts a{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.28);
+  color:#fff;text-decoration:none;font-size:14px;padding:10px 15px;border-radius:11px;transition:background .15s,border-color .15s}
+.contacts a:hover{background:rgba(255,255,255,.22);border-color:#fff}
+.contacts a b{font-weight:800}
 footer{text-align:center;color:var(--soft);font-size:13px;padding:10px 0 50px}
 </style>
 </head>
@@ -347,8 +352,14 @@ footer{text-align:center;color:var(--soft);font-size:13px;padding:10px 0 50px}
 <!-- CTA -->
 <div class="cta">
   <h2>Давайте обсудим ваш продукт</h2>
-  <p>Расскажите про сервис — предложу формат и коммерческое предложение. Отвечаю в Telegram.</p>
+  <p>Расскажите про сервис — предложу формат и коммерческое предложение.</p>
   <a class="btn" href="https://t.me/ildarssagidullin" target="_blank" rel="noopener">Написать в Telegram →</a>
+  <div class="contacts">
+    <a href="https://t.me/ildarssagidullin" target="_blank" rel="noopener"><b>Telegram</b> @ildarssagidullin</a>
+    <a href="https://wa.me/77056350634" target="_blank" rel="noopener"><b>WhatsApp</b> +7 705 635 06 34</a>
+    <a href="https://instagram.com/sagidullinir" target="_blank" rel="noopener"><b>Instagram</b> @sagidullinir</a>
+    <a href="mailto:i.sagidullin24@gmail.com"><b>Почта</b> i.sagidullin24@gmail.com</a>
+  </div>
 </div>
 
 <footer>
